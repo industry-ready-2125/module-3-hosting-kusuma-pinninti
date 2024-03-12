@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <link  rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <script>
+            function validate()
+            {
+            var name=document.myform.name.value;  
+            var pwd=document.myform.password.value;  
+            var confirm=document.myform.cfpwd.value; 
+            var phn=document.myform.phn.value;
+            var mail=document.myform.email.value;
+            if (name.length<6||/\s/.test(name)){  
+              alert("Name should contain atleast 6 characters");  
+              return false;  
+            }
+            var passwordRegex= /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+
+            if (!passwordRegex.test(pwd)) {
+                alert("Please enter a valid password. It should be at least 8 characters long, contain one capital letter, one small letter, one digit, and one special character (!@#$%^&*).");
+                return false;
+            }
+
+            if(pwd!=confirm)
+            {
+              alert('Password and confirm password should be same');
+              return false;
+            }
+            
+            var emailRegex = /^[a-zA-Z0-9]+@(gmail|yahoo|outlook|email|gvpce\.ac)\.(com|in)$/i;
+
+           if (!emailRegex.test(mail))
+           {
+            alert("Please enter a valid email address in the format name@gmail.com");
+            return false;
+           }
+           var mobileRegex = /^[6-9]\d{9}$/;
+
+            if (!mobileRegex.test(phn)) {
+                alert("Please enter a valid 10-digit mobile number starting with a digit in the range 6-9.");
+                return false;
+            }
+
+
+            }
+        </script>
+       
+        <form name="myform" onsubmit="return validate()">
+            <fieldset >
+                <legend>Registration form</legend>
+            <p>
+            <label for="name">Username:</label>
+            <input type="text" name="name" placeholder="Enter username" required></br><br>
+            </p>
+            
+                <p>
+            <label for="pwd">Password:</label>
+            <input type="password" name="password" placeholder="Enter password" required></br><br>
+        </p>
+        <p>
+            <label for="cfpwd">Confirm password:</label>
+            <input type="password" name="cfpwd" placeholder="Confirm your password" required></br><br>
+        </p>
+        <p>
+            <label for="email">Mail id:</label>
+            <input type="email" name="email" placeholder="Enter your mail id" required></br><br>
+        </p>
+        <p>
+            <label for="code">Country code:</label>
+            <input type="text" name="code" size="3" value="+91" ><br><br>
+        </p>
+        <p>
+            <label for="phn">Phone number:</label>
+            <input type="number" name="phn" placeholder="Enter phone number" required><br><br>
+        </p>
+        <p>
+            <label>DOB:</label>
+            <input type="date" required><br><br>
+                
+        </p>
+        <p>
+            <label >Address:</label>
+            <textarea row="8" cols="12" name="address" required></textarea><br><br>
+        </p>
+        <p>
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<br><br>
+        </p>
+            
+         <a href="index.html">Login??</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="submit"> 
+    </fieldset>
+</form>
+
+
+    </body>
+</html>
