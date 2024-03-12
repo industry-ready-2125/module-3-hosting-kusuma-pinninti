@@ -1,0 +1,35 @@
+form{
+    font-weight: bold;
+    font-size: 15px;
+    background-color:antiquewhite;
+    padding: 20px;
+    border-radius: 8px;
+    display: table;
+    width: 50%;
+    margin-top:70px;
+    margin-left: 20%; 
+    
+
+}
+label
+{
+ display:table-cell;
+ padding-right:10px;
+}
+input{
+    display:table-cell;
+}
+p{
+    display:table-row;
+}
+body{
+    background-image: url('https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2021/12/slider-10.jpg');
+    background-size:100% 100% ;
+    background-repeat: no-repeat;
+    display: flex;
+    
+}
+textarea
+{
+    display:table-cell;
+}
