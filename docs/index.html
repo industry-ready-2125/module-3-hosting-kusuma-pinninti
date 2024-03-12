@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <script>  
+            function validateform(){  
+            var name=document.myform.name.value;  
+            var password=document.myform.password.value;  
+              
+            if (name==null || name==""){  
+              alert("Name can't be blank");  
+              return false;  
+            }else if(password.length<6){  
+              alert("Password must be at least 6 characters long.");  
+              return false;  
+              }  
+            }  
+            </script>  
+        <center>
+            <form name="myform" onsubmit="return validateform()">
+             <fieldset>
+<legend>Login form</legend>
+            <p>
+            <label for="uname">Username</label>
+            <input type="text" name="name" placeholder="Enter username" required></br><br>
+           </p>
+            <p>
+            <label for="pwd">Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required></br><br>
+            </p>
+            <input type="submit" value="submit" ><br><br>
+            <a href="page03.html" >Forgot password</a><br><br>
+            <a href="page02.html"  >Sign Up</a><br>
+        </fieldset>
+        </form>
+    </center>
+    </body>
+</html>
